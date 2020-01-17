@@ -1,0 +1,18 @@
+#!/bin/bash
+
+pis="rpi01 rpi02 rpi03 rpi04 rpi05 rpi06 rpi07 rpi08 rpi09 rpi10 rpi11 rpi12 rpi13 rpi14 rpi15 rpi16 rpi17 rpi18 rpi19 rpi20"
+
+echo
+for pi in $pis; do
+
+echo $pi
+ping $pi -c  1 > /dev/null 2>&1
+
+if [ $? -eq "0" ] ; then 
+
+echo "$pi:alive "
+else 
+echo "$pi:dead"
+fi
+done
+ 
